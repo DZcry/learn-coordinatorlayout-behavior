@@ -2,12 +2,13 @@ package com.example.learn.business
 
 
 import android.content.Context
-import android.support.v7.widget.RecyclerView
+import android.os.Build
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.FrameLayout
 import android.widget.ImageView
+import androidx.recyclerview.widget.RecyclerView
 import com.chad.library.adapter.base.BaseMultiItemQuickAdapter
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.BaseViewHolder
@@ -42,14 +43,16 @@ class MerchantFoodLayout(context: Context) : FrameLayout(context), ScrollableVie
         vRecycler.addOnScrollListener(object : RecyclerView.OnScrollListener() {
             var totalDy = 0
 
-            override fun onScrolled(recyclerView: RecyclerView?, dx: Int, dy: Int) {
+            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
                 totalDy -= dy
                 val transY = if (totalDy > -(topHeight + recommendHeight)) totalDy else -(topHeight + recommendHeight)
                 vSide.translationY = transY.toFloat()
             }
         })
 
-        vSide.isNestedScrollingEnabled = false
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            vSide.isNestedScrollingEnabled = false
+        }
         vSide.adapter = SideAdapter(Data.foodMenus())
     }
 

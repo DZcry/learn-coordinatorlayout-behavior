@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion COMPILE_SDK_VERSION as int
@@ -51,19 +52,19 @@ dependencies {
     implementation rootProject.ext.support_appcompat_v7
     implementation rootProject.ext.support_recyclerview_v7
     implementation rootProject.ext.support_design
-    implementation 'com.android.support.constraint:constraint-layout:1.1.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
     implementation rootProject.ext.kotlin
     implementation rootProject.ext.kotlin_stdlib
     implementation rootProject.ext.kotlin_anko_common
     implementation rootProject.ext.glide
-    annotationProcessor rootProject.ext.glide_compiler
+    kapt rootProject.ext.glide_compiler
     implementation rootProject.ext.glide_transformations
     implementation rootProject.ext.list_pull_to_refresh
     implementation rootProject.ext.list_adapter
     implementation rootProject.ext.eventbus
 
     implementation files('libs/overscroll-release-v1.1-20160904.jar')
-    implementation 'com.oushangfeng:PinnedSectionItemDecoration:1.2.4'
+    implementation 'com.oushangfeng:PinnedSectionItemDecoration:1.3.2-androidx'
     implementation 'com.ogaclejapan.smarttablayout:library:1.6.1@aar'
     implementation 'com.hyman:flowlayout-lib:1.1.1'
 }

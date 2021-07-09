@@ -3,10 +3,10 @@ package com.example.learn.business
 import android.animation.Animator
 import android.content.Context
 import android.graphics.Color
-import android.support.design.widget.CoordinatorLayout
 import android.util.AttributeSet
 import android.view.View
 import android.widget.Scroller
+import androidx.coordinatorlayout.widget.CoordinatorLayout
 import com.example.learn.R
 import com.example.learn.argbEvaluator
 import com.example.learn.dp

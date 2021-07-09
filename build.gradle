@@ -5,9 +5,20 @@ buildscript {
     repositories {
         google()
         jcenter()
+        maven { url "https://maven.aliyun.com/repository/google" }
+        maven { url "https://maven.aliyun.com/repository/jcenter" }
+        maven { url "https://maven.aliyun.com/repository/gradle-plugin" }
+        maven { url "https://maven.aliyun.com/repository/central" }
+        maven { url "https://maven.aliyun.com/mvn/guide" }
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+        maven { url 'https://maven.aliyun.com/repository/releases' }
+        maven { url 'https://repo1.maven.org/maven2/' }
+        maven { url "https://dl.bintray.com/thelasterstar/maven/" }
+        maven { url 'https://developer.huawei.com/repo/' }
+        google()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.0.1'
+        classpath 'com.android.tools.build:gradle:3.6.4'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:${KOTLIN_VERSION}"
     }
 }
@@ -19,6 +30,17 @@ allprojects {
         mavenCentral()
         maven { url "https://jitpack.io" }
         maven { url 'https://maven.google.com' }
+        maven { url "https://maven.aliyun.com/repository/google" }
+        maven { url "https://maven.aliyun.com/repository/jcenter" }
+        maven { url "https://maven.aliyun.com/repository/gradle-plugin" }
+        maven { url "https://maven.aliyun.com/repository/central" }
+        maven { url "https://maven.aliyun.com/mvn/guide" }
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+        maven { url 'https://maven.aliyun.com/repository/releases' }
+        maven { url 'https://repo1.maven.org/maven2/' }
+        maven { url "https://dl.bintray.com/thelasterstar/maven/" }
+        maven { url 'https://developer.huawei.com/repo/' }
+        google()
     }
 }
 
@@ -27,11 +49,11 @@ task clean(type: Delete) {
 }
 
 ext {
-    support_multidex = 'com.android.support:multidex:1.0.2'
-    support_support_v4 = "com.android.support:support-v4:${ANDROID_SUPPORT_VERSION}"
-    support_appcompat_v7 = "com.android.support:appcompat-v7:${ANDROID_SUPPORT_VERSION}"
-    support_recyclerview_v7 = "com.android.support:recyclerview-v7:${ANDROID_SUPPORT_VERSION}"
-    support_design = "com.android.support:design:${ANDROID_SUPPORT_VERSION}"
+    support_multidex = 'androidx.multidex:multidex:2.0.0'
+    support_support_v4 = 'androidx.legacy:legacy-support-v4:1.0.0'
+    support_appcompat_v7 = 'androidx.appcompat:appcompat:1.0.0'
+    support_recyclerview_v7 = 'androidx.recyclerview:recyclerview:1.0.0'
+    support_design = 'com.google.android.material:material:1.0.0'
     kotlin = "org.jetbrains.kotlin:kotlin-stdlib:${KOTLIN_VERSION}"
     kotlin_stdlib = "org.jetbrains.kotlin:kotlin-stdlib:${KOTLIN_VERSION}"
     kotlin_anko_common = "org.jetbrains.anko:anko-common:${ANKO_VERSION}"
